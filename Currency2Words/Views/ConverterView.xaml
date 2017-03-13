@@ -6,10 +6,7 @@
         xmlns:local="clr-namespace:Currency2Words"
         xmlns:viewmodel="clr-namespace:Currency2Words.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" Background="Black">
-    <Window.DataContext>
-        <viewmodel:ConverterViewModel/>
-    </Window.DataContext>
+        Height="350" Width="525" Background="Black">
     <Grid Margin="100 40" >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

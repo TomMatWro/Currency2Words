@@ -1,26 +1,22 @@
 ﻿using Currency2Words.Annotations;
 using Currency2Words.Commands;
-using Currency2Words.Models;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
 namespace Currency2Words.ViewModels
 {
-    public class ConverterViewModel : INotifyPropertyChanged
+    public class ConverterViewModel : IConverterViewModel, INotifyPropertyChanged
     {
-        private string _words;
+        private string _currencyInWords;
         private string _input;
         private bool _canConvert;
-        private ICommand _convertCommand;
 
         public ConverterViewModel()
         {
             _input = "";
-            _words = "no input";
+            _currencyInWords = "no input";
             ConvertCommand = new ConvertCommand(this);
-            CanConvert = true;
-            Model = new ConverterModel();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -41,15 +37,13 @@ namespace Currency2Words.ViewModels
             }
         }
 
-        public ConverterModel Model { get; set; }
-
-        public string Words
+        public string CurrencyInWords
         {
-            get { return _words; }
+            get { return _currencyInWords; }
             set
             {
-                _words = value;
-                OnPropertyChanged("Words");
+                _currencyInWords = value;
+                OnPropertyChanged("CurrencyInWords");
             }
         }
 
@@ -70,10 +64,6 @@ namespace Currency2Words.ViewModels
             }
         }
 
-        public ICommand ConvertCommand
-        {
-            get { return _convertCommand; }
-            set { _convertCommand = value; }
-        }
+        public ICommand ConvertCommand { get; set; }
     }
 }

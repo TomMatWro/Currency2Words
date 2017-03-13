@@ -1,14 +1,12 @@
-﻿using System;
+﻿using Currency2Words.ViewModels;
+using System;
 using System.Windows.Input;
-using Currency2Words.ViewModels;
 
 namespace Currency2Words.Commands
 {
     public class ConvertCommand : ICommand
     {
-        private ConverterViewModel _viewModel;
-        private Predicate<object> _canExecute;
-        private ICommand _toggleExecutionCommand;
+        private readonly ConverterViewModel _viewModel;
 
         public ConvertCommand(ConverterViewModel viewModel)
         {
@@ -23,8 +21,7 @@ namespace Currency2Words.Commands
         public void Execute(object parameter)
         {
             Console.WriteLine("ConvertCommand");
-            _viewModel.Words = "aaaaaaaaaa";
-            _viewModel.Model.Convert2Words();
+            _viewModel.CurrencyInWords = "aaaaaaaaaa";
         }
 
         public event EventHandler CanExecuteChanged;
