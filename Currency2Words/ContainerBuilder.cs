@@ -7,7 +7,7 @@ namespace Currency2Words
     {
         public static void Configure(IUnityContainer container)
         {
-            container.RegisterType<IConverterViewModel, ConverterViewModel>();
+            container.RegisterType<IConverterViewModel, ConverterViewModel>(new ContainerControlledLifetimeManager());
         }
     }
 }

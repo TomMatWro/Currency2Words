@@ -2,7 +2,9 @@
 using Currency2Words.Commands;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 
 namespace Currency2Words.ViewModels
 {
@@ -11,6 +13,7 @@ namespace Currency2Words.ViewModels
         private string _currencyInWords;
         private string _input;
         private bool _canConvert;
+        private RelayCommand _convertCommand;
 
         public ConverterViewModel()
         {
@@ -47,23 +50,22 @@ namespace Currency2Words.ViewModels
             }
         }
 
-        public bool CanConvert
+        public RelayCommand ConvertCommand
         {
-            get { return _canConvert; }
-            set
+            get
             {
-                if (Input.Length >= 1)
-                {
-                    _canConvert = true;
-                }
-                else
-                {
-                    _canConvert = true;
-                }
-                OnPropertyChanged("CanConvert");
+                return _convertCommand
+                    ?? (_convertCommand = new RelayCommand(
+                    async () =>
+                    {
+                        await Convert2Words();
+                    }));
             }
         }
 
-        public ICommand ConvertCommand { get; set; }
+        private async Task Convert2Words()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

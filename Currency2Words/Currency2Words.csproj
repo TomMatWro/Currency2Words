@@ -99,6 +99,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\ConvertCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Commands\RelayCommandGeneric.cs" />
     <Compile Include="ContainerBuilder.cs" />
     <Compile Include="Models\converterModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
