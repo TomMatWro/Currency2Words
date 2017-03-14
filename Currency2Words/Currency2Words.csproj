@@ -98,11 +98,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModelLocator.cs" />
     <Compile Include="Commands\ConvertCommand.cs" />
-    <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Commands\RelayCommandGeneric.cs" />
     <Compile Include="ContainerBuilder.cs" />
-    <Compile Include="Models\converterModel.cs" />
+    <Compile Include="Models\ConverterModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>

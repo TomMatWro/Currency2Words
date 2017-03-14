@@ -15,7 +15,7 @@ namespace Currency2Words.Commands
 
         public bool CanExecute(object parameter)
         {
-            return _viewModel.CanConvert;
+            return true;
         }
 
         public void Execute(object parameter)
